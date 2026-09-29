@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250">
+  <defs>
+    <linearGradient id="cricketBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071b12"/>
+      <stop offset="100%" stop-color="#0f3d28"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#cricketBg)"/>
+  
+  <!-- Pitch Oval -->
+  <ellipse cx="200" cy="115" rx="130" ry="65" fill="none" stroke="#00e676" stroke-width="3" opacity="0.4"/>
+  <rect x="180" y="80" width="40" height="70" fill="#a0825c" opacity="0.6"/>
+  <line x1="180" y1="95" x2="220" y2="95" stroke="#ffffff" stroke-width="2"/>
+  <line x1="180" y1="135" x2="220" y2="135" stroke="#ffffff" stroke-width="2"/>
+  
+  <!-- Wickets -->
+  <line x1="195" y1="88" x2="195" y2="95" stroke="#ffffff" stroke-width="2"/>
+  <line x1="200" y1="88" x2="200" y2="95" stroke="#ffffff" stroke-width="2"/>
+  <line x1="205" y1="88" x2="205" y2="95" stroke="#ffffff" stroke-width="2"/>
+  
+  <!-- Cricket Bat & Ball -->
+  <circle cx="240" cy="120" r="12" fill="#d32f2f"/>
+  <path d="M 140 150 L 175 110 L 185 118 L 150 158 Z" fill="#ffb74d"/>
+  
+  <!-- Live Badge -->
+  <rect x="15" y="15" width="80" height="24" rx="12" fill="#ff3d00"/>
+  <text x="55" y="31" font-family="Segoe UI, sans-serif" font-weight="800" font-size="12" fill="#ffffff" text-anchor="middle">LIVE ODDS</text>
+  
+  <text x="200" y="220" font-family="Segoe UI, sans-serif" font-weight="900" font-size="18" fill="#ffffff" text-anchor="middle">CRICKET BETTING LIVE</text>
+</svg>

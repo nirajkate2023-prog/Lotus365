@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250">
+  <rect width="400" height="250" fill="#0b1e16"/>
+  <circle cx="200" cy="110" r="65" fill="none" stroke="#00e676" stroke-width="4"/>
+  <path d="M 170 110 L 230 110 M 200 80 L 200 140" stroke="#ffffff" stroke-width="3"/>
+  <text x="200" y="215" font-family="Segoe UI, sans-serif" font-weight="800" font-size="20" fill="#ffffff" text-anchor="middle">STADIUM CLASH</text>
+</svg>

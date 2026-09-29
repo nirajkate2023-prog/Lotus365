@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250">
+  <rect width="400" height="250" fill="#0d1424"/>
+  <circle cx="200" cy="125" r="70" fill="none" stroke="#00e676" stroke-width="4"/>
+  <path d="M 150 125 L 180 125 L 195 90 L 210 160 L 225 110 L 240 125 L 250 125" fill="none" stroke="#00b0ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="200" y="215" font-family="Segoe UI, sans-serif" font-weight="800" font-size="20" fill="#ffffff" text-anchor="middle">CYBER PULSE</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250">
+  <rect width="400" height="250" fill="#180c2e"/>
+  <path d="M 50 200 L 170 80 L 230 80 L 350 200 Z" fill="none" stroke="#ff3d00" stroke-width="3"/>
+  <line x1="200" y1="200" x2="200" y2="80" stroke="#ff9100" stroke-width="4" stroke-dasharray="15 10"/>
+  <text x="200" y="225" font-family="Segoe UI, sans-serif" font-weight="800" font-size="20" fill="#ffffff" text-anchor="middle">NEON RACERS</text>
+</svg>

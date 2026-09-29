@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250">
+  <rect width="400" height="250" fill="#080c1d"/>
+  <ellipse cx="200" cy="110" rx="90" ry="35" fill="none" stroke="#7c4dff" stroke-width="3" transform="rotate(-15, 200, 110)"/>
+  <circle cx="200" cy="110" r="28" fill="#00b0ff"/>
+  <text x="200" y="215" font-family="Segoe UI, sans-serif" font-weight="800" font-size="20" fill="#ffffff" text-anchor="middle">GALACTIC ORBIT</text>
+</svg>

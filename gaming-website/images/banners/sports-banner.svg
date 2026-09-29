@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="sportsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05101a" />
+      <stop offset="50%" stop-color="#0f263d" />
+      <stop offset="100%" stop-color="#081420" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00b0ff" />
+      <stop offset="100%" stop-color="#7c4dff" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#sportsBg)" />
+  <!-- Stadium Lights -->
+  <circle cx="200" cy="50" r="180" fill="#00b0ff" opacity="0.12" filter="blur(20px)" />
+  <circle cx="600" cy="50" r="180" fill="#00e676" opacity="0.12" filter="blur(20px)" />
+  <!-- Field Lines -->
+  <path d="M 0 350 Q 400 280 800 350" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+  <circle cx="400" cy="315" r="50" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  <!-- Trophy Icon Silhouette -->
+  <path d="M 370 140 L 430 140 L 420 220 C 420 250 380 250 380 220 Z" fill="url(#blueGrad)"/>
+  <rect x="385" y="250" width="30" height="40" fill="url(#blueGrad)"/>
+  <rect x="365" y="290" width="70" height="15" rx="3" fill="#ffffff" opacity="0.9"/>
+  <text x="400" y="380" font-family="Segoe UI, sans-serif" font-weight="900" font-size="28" fill="#ffffff" text-anchor="middle" letter-spacing="3">LIVE SPORTS HUB</text>
+</svg>

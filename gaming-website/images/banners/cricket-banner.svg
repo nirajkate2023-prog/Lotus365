@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="stadiumBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05140b" />
+      <stop offset="50%" stop-color="#0c2b18" />
+      <stop offset="100%" stop-color="#040d07" />
+    </linearGradient>
+    <linearGradient id="cricketGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e676" />
+      <stop offset="100%" stop-color="#ff9100" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#stadiumBg)"/>
+  
+  <!-- Stadium Floodlights -->
+  <circle cx="150" cy="60" r="140" fill="#00e676" opacity="0.15" filter="blur(25px)"/>
+  <circle cx="650" cy="60" r="140" fill="#ff9100" opacity="0.15" filter="blur(25px)"/>
+  
+  <!-- Pitch Lines -->
+  <polygon points="100,380 700,380 620,260 180,260" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+  <circle cx="400" cy="320" r="45" fill="none" stroke="rgba(0,230,118,0.4)" stroke-width="3"/>
+  
+  <!-- Scorecard Preview Box in Graphic -->
+  <rect x="220" y="90" width="360" height="150" rx="16" fill="rgba(13,23,17,0.85)" stroke="url(#cricketGlow)" stroke-width="2"/>
+  <text x="400" y="125" font-family="Segoe UI, sans-serif" font-weight="900" font-size="18" fill="#ff9100" text-anchor="middle">IND vs AUS • T20 MATCH</text>
+  <text x="400" y="165" font-family="Segoe UI, sans-serif" font-weight="900" font-size="32" fill="#ffffff" text-anchor="middle">IND 184/4 (18.2 ov)</text>
+  <text x="400" y="200" font-family="Segoe UI, sans-serif" font-weight="700" font-size="14" fill="#00e676" text-anchor="middle">Target: 180 | India need 6 runs in 10 balls</text>
+  
+  <!-- Title Text -->
+  <text x="400" y="380" font-family="Segoe UI, sans-serif" font-weight="900" font-size="28" fill="#ffffff" text-anchor="middle" letter-spacing="3">LIVE CRICKET BETTING &amp; SCORES</text>
+</svg>

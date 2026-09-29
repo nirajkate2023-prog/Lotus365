@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- EDIT SEO TITLE & META DESCRIPTION HERE -->
+  <title>Online Game Library - Explore Arcade, Sports & Casino Games | Lotus365</title>
+  <meta name="description" content="Browse our complete list of online games on Lotus365. Filter by Popular, New Releases, Sports, Arcade, Aviator, and Live Casino. Get instant player ID on WhatsApp.">
+  <link rel="canonical" href="https://example.com/games.html">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Online Game Library - Lotus365">
+  <meta property="og:description" content="Browse our complete list of online games with dynamic search and instant filtering.">
+  <meta property="og:image" content="images/banners/hero-banner.svg">
+  <meta property="og:url" content="https://example.com/games.html">
+  <meta property="og:type" content="website">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- HEADER & NAVIGATION -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Lotus365 Homepage">
+        <img src="images/logo.png" alt="Lotus365 Logo" width="220" height="55" style="max-height: 48px; object-fit: contain;">
+      </a>
+
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="games.html" class="nav-link active">Games</a>
+        <a href="sports.html" class="nav-link">Sports &amp; Cricket</a>
+        <a href="games.html?category=Live+Casino" class="nav-link">Live Casino</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+
+        <div class="auth-actions">
+          <a href="https://wa.me/1234567890?text=Hello,%20I%20want%20to%20get%20an%20instant%20gaming%20ID%20on%20Lotus365" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+            <svg class="whatsapp-icon" viewBox="0 0 24 24" style="width: 18px; height: 18px;"><path fill="currentColor" d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            Get ID
+          </a>
+          <button class="btn btn-secondary open-login-btn">Login</button>
+          <button class="btn btn-primary open-register-btn">Register</button>
+        </div>
+      </nav>
+
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT AREA -->
+  <main class="section-padding">
+    <div class="container">
+      
+      <!-- EDIT H1 HERE -->
+      <div class="section-header" style="flex-direction: column; align-items: flex-start; margin-bottom: 2rem;">
+        <h1 class="section-title" style="font-size: 2.25rem;">Lotus365 Online Game Library</h1>
+        <p class="section-subtitle">Search and filter through our full collection of interactive games</p>
+      </div>
+
+      <!-- Filter Controls & Real-Time Search Bar -->
+      <div class="filter-bar">
+        <div class="category-tabs" aria-label="Game Categories">
+          <button class="category-btn active" data-category="All">All Games</button>
+          <button class="category-btn" data-category="Popular">Popular</button>
+          <button class="category-btn" data-category="Crash Games">Aviator &amp; Crash</button>
+          <button class="category-btn" data-category="Sports">Cricket &amp; Sports</button>
+          <button class="category-btn" data-category="Live Casino">Live Casino</button>
+          <button class="category-btn" data-category="Card Games">Teen Patti &amp; Cards</button>
+          <button class="category-btn" data-category="Slots">Slots</button>
+        </div>
+
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="game-search-input" class="search-input" placeholder="Search games..." aria-label="Search games">
+        </div>
+      </div>
+
+      <!-- Dynamic Reusable Game Grid (Populated via JS) -->
+      <div class="game-grid" id="game-grid-container">
+        <!-- JavaScript populates games dynamically -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- SEO CONTENT START -->
+  <section class="seo-content-section">
+    <div class="container">
+      <!-- EDIT SEO CONTENT HERE -->
+      <article class="seo-content">
+        <h2>Explore Our Complete Online Game Library</h2>
+        <p>
+          Browse our extensive collection of web-based games on Lotus365. Get instant player ID on WhatsApp to enjoy popular releases, sports action, classic arcade titles, and live dealer streams without delay.
+        </p>
+
+        <h2>Instant Filter &amp; Search Functionality</h2>
+        <p>
+          Finding your favorite title has never been easier. Use our real-time search box or category tabs to sort games by theme, release recency, or gameplay style.
+        </p>
+      </article>
+    </div>
+  </section>
+  <!-- SEO CONTENT END -->
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/1234567890?text=Hello,%20I%20want%20to%20get%20an%20instant%20gaming%20ID%20on%20Lotus365" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp to get Instant ID">
+    <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    <span>Get ID on WhatsApp</span>
+  </a>
+
+  <!-- LOGIN / REGISTER MODAL DEMO UI -->
+  <div class="modal-overlay" id="auth-modal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="close-modal" id="close-modal-btn" aria-label="Close modal">&times;</button>
+      <h3 class="modal-title" id="modal-title">Welcome to Lotus365</h3>
+      <form id="auth-form">
+        <div class="form-group">
+          <label class="form-label" for="user-email">Email or Username</label>
+          <input type="text" id="user-email" class="form-input" placeholder="player@lotus365.game" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="user-pass">Password</label>
+          <input type="password" id="user-pass" class="form-input" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn btn-primary" id="modal-submit-btn" style="width: 100%; margin-top: 0.5rem;">Continue</button>
+      </form>
+      <div style="margin-top: 1rem; text-align: center; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+        <a href="https://wa.me/1234567890?text=Hello,%20I%20want%20to%20get%20an%20instant%20gaming%20ID%20on%20Lotus365" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%;">
+          Get ID via WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <img src="images/logo.png" alt="Lotus365 Logo" width="220" height="55" style="max-height: 48px; object-fit: contain;">
+          </a>
+          <p>Lotus365 provides an original, modern web gaming interface offering arcade action, sports simulations, and responsive entertainment.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="games.html">Games Catalog</a></li>
+            <li><a href="sports.html">Sports Hub</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Game Categories</h4>
+          <ul class="footer-links">
+            <li><a href="games.html?category=Crash+Games">Aviator &amp; Crash</a></li>
+            <li><a href="games.html?category=Sports">Cricket &amp; Sports</a></li>
+            <li><a href="games.html?category=Live+Casino">Live Casino</a></li>
+            <li><a href="games.html?category=Card+Games">Teen Patti &amp; Cards</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">WhatsApp Support</h4>
+          <ul class="footer-links">
+            <li><a href="https://wa.me/1234567890?text=Hello,%20I%20want%20to%20get%20an%20instant%20gaming%20ID%20on%20Lotus365" target="_blank" rel="noopener noreferrer" style="color: var(--accent-whatsapp); font-weight: 700;">Get ID on WhatsApp</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+            <li><a href="faq.html">Help Center</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trust-badges-row">
+        <div class="trust-item">⚡ 2-Min Instant ID</div>
+        <div class="trust-item">💳 Instant UPI / Bank Payouts</div>
+        <div class="trust-item">🛡️ 100% Encrypted &amp; Secure</div>
+        <div class="trust-item">💬 24x7 WhatsApp Assistance</div>
+      </div>
+
+      <div class="responsible-box">
+        <span class="age-badge">18+ ONLY</span>
+        <p>Responsible Entertainment: Play responsibly. Content on this website is for entertainment purposes.</p>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Lotus365. All rights reserved.</p>
+        <p>Built with HTML5, CSS3 &amp; Vanilla JavaScript</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/games.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
