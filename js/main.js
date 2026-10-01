@@ -26,11 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 2. Active Link Highlighting based on current path
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const normalizePath = (value) => {
+    const path = (value || '').split('?')[0].split('#')[0].replace(/\.html$/, '').replace(/\/+$/, '');
+    if (path === '') return '/';
+    return path.startsWith('/') ? path : '/' + path;
+  };
+  const currentPath = normalizePath(window.location.pathname);
   const navLinks = document.querySelectorAll('.nav-link');
   navLinks.forEach(link => {
-    const linkPath = link.getAttribute('href');
-    if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
+    if (normalizePath(link.getAttribute('href')) === currentPath) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');

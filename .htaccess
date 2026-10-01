@@ -1,6 +1,25 @@
 # Lotus365 — Apache configuration for Hostinger
 DirectoryIndex index.html index.htm
 
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Redirect /index.html to /
+  RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+  RewriteRule ^index\.html$ / [R=301,L]
+
+  # Redirect /<page>.html to /<page> (clean URLs)
+  RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+  RewriteRule ^(.+)\.html$ /$1 [R=301,L,NE]
+
+  # Internally serve /<page> from <page>.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^(.+)$ $1.html [L]
+</IfModule>
+
 <IfModule mod_autoindex.c>
   Options -Indexes
 </IfModule>
