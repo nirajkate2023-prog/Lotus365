@@ -1,0 +1,11 @@
+# Lotus365 — Apache configuration for Hostinger
+DirectoryIndex index.html index.htm
+
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+# Block direct access to source-only files if they ever end up here
+<FilesMatch "\.(zip|md|json|lock)$">
+  Require all denied
+</FilesMatch>
