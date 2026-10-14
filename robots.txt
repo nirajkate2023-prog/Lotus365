@@ -1,0 +1,10 @@
+# robots.txt for lotus365slot.com
+User-agent: *
+Allow: /
+Disallow: /content/
+
+# Crawl-delay for polite rate limiting
+Crawl-delay: 1
+
+# XML Sitemap Location
+Sitemap: https://lotus365slot.com/sitemap.xml

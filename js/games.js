@@ -1,6 +1,6 @@
 /* 
 =============================================================================
-  NEXUS GAMING - GAMES DATABASE & CATALOG CONTROLLER
+  LOTUS365 - GAMES DATABASE & CATALOG CONTROLLER
   File: js/games.js
 =============================================================================
   HOW TO EDIT GAME LIST:

@@ -1,6 +1,6 @@
 /* 
 =============================================================================
-  NEXUS GAMING - MAIN UI & INTERACTION CONTROLLER
+  LOTUS365 - MAIN UI & INTERACTION CONTROLLER
   File: js/main.js
 =============================================================================
 */
