@@ -77,9 +77,9 @@
   }
 
   function setConnState(kind, message) {
-    if (!el['conn-state']) return;
-    el['conn-state'].className = 'conn-state' + (kind ? ' is-' + kind : '');
-    el['conn-state'].textContent = message || '';
+    if (!el.connState) return;
+    el.connState.className = 'conn-state' + (kind ? ' is-' + kind : '');
+    el.connState.textContent = message || '';
   }
 
   function b64EncodeUnicode(text) {
@@ -102,6 +102,15 @@
 
   function hasRepo() {
     return !!(state.config.owner && state.config.repo && state.config.token);
+  }
+
+  function syncConnection() {
+    state.config.owner = el.owner.value.trim();
+    state.config.repo = el.repo.value.trim();
+    state.config.branch = el.branch.value.trim() || 'main';
+    state.config.path = el.path.value.trim() || 'content/blog/posts.json';
+    state.config.token = el.token.value.trim();
+    state.config.remember = el.remember.checked;
   }
 
   function serialize() {
@@ -281,8 +290,8 @@
       }).join('');
     }
 
-    if (el['studio-list-count']) {
-      el['studio-list-count'].textContent = state.posts.length + (state.posts.length === 1 ? ' post' : ' posts');
+    if (el.listCount) {
+      el.listCount.textContent = state.posts.length + (state.posts.length === 1 ? ' post' : ' posts');
     }
   }
 
@@ -297,7 +306,7 @@
     el.previewTitle.textContent = title;
 
     var when = date ? LB.formatDate(date + 'T09:00:00') : 'No date set';
-    el.previewMeta.textContent = category + '  â€¢  By ' + author + '  â€¢  ' + when + '  â€¢  ' + LB.readingTime(body) + ' min read';
+    el.previewMeta.textContent = category + '  •  By ' + author + '  •  ' + when + '  •  ' + LB.readingTime(body) + ' min read';
 
     var cover = LB.safeUrl(el.cover.value.trim());
     if (cover) {
@@ -361,7 +370,7 @@
   }
 
   function markDirty() {
-    if (el['draft-note']) el['draft-note'].hidden = false;
+    if (el.draftNote) el.draftNote.hidden = false;
     window.clearTimeout(markDirty.timer);
     markDirty.timer = window.setTimeout(saveDraft, 600);
   }
@@ -398,7 +407,7 @@
     el.publish.textContent = state.editingSlug ? 'Update post' : 'Publish post';
     el.del.hidden = !state.editingSlug;
 
-    if (el['draft-note']) el['draft-note'].hidden = false;
+    if (el.draftNote) el.draftNote.hidden = false;
     renderPreview();
     renderList();
     return true;
@@ -463,6 +472,8 @@
   function publish() {
     if (state.busy) return;
 
+    syncConnection();
+
     var post;
     try {
       post = buildPost();
@@ -484,7 +495,7 @@
       state.busy = false;
       el.publish.disabled = false;
       writeJSON(DRAFT_KEY, null);
-      if (el['draft-note']) el['draft-note'].hidden = true;
+      if (el.draftNote) el.draftNote.hidden = true;
       state.editingSlug = post.slug;
       state.slugLocked = true;
       el.slug.value = post.slug;
@@ -630,7 +641,7 @@
 
     el.new.addEventListener('click', function () {
       writeJSON(DRAFT_KEY, null);
-      if (el['draft-note']) el['draft-note'].hidden = true;
+      if (el.draftNote) el.draftNote.hidden = true;
       fillForm(null);
       el.title.focus();
     });
@@ -643,12 +654,7 @@
     });
 
     el.connect.addEventListener('click', function () {
-      state.config.owner = el.owner.value.trim();
-      state.config.repo = el.repo.value.trim();
-      state.config.branch = el.branch.value.trim() || 'main';
-      state.config.path = el.path.value.trim() || 'content/blog/posts.json';
-      state.config.token = el.token.value.trim();
-      state.config.remember = el.remember.checked;
+      syncConnection();
       saveConfig();
       connect().then(function (ok) {
         if (ok) loadPosts();
@@ -666,7 +672,7 @@
 
     el.discardDraft.addEventListener('click', function () {
       writeJSON(DRAFT_KEY, null);
-      if (el['draft-note']) el['draft-note'].hidden = true;
+      if (el.draftNote) el.draftNote.hidden = true;
       fillForm(null);
       setStatus('', 'Draft discarded.');
     });
@@ -702,6 +708,9 @@
     el.published = document.getElementById('f-published');
     el.mode = document.getElementById('editor-mode');
     el.list = document.getElementById('studio-list');
+    el.listCount = document.getElementById('studio-list-count');
+    el.connState = document.getElementById('conn-state');
+    el.draftNote = document.getElementById('draft-note');
     el.status = document.getElementById('studio-status');
     el.previewTitle = document.getElementById('preview-title');
     el.previewMeta = document.getElementById('preview-meta');
