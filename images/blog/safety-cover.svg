@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="Account security shield illustration">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#060d18"/>
+      <stop offset="1" stop-color="#0b2233"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00e676"/>
+      <stop offset="1" stop-color="#00b0ff"/>
+    </linearGradient>
+    <radialGradient id="glow3" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0" stop-color="#00b0ff" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#00b0ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg3)"/>
+  <circle cx="600" cy="335" r="300" fill="url(#glow3)"/>
+  <circle cx="600" cy="335" r="250" fill="none" stroke="#00b0ff" stroke-opacity="0.18" stroke-width="4"/>
+  <circle cx="600" cy="335" r="305" fill="none" stroke="#00e676" stroke-opacity="0.1" stroke-width="3" stroke-dasharray="14 20"/>
+  <g transform="translate(600 365) scale(1.32) translate(-600 -365)">
+    <path d="M600 150 L790 225 V370 C790 480 705 545 600 580 C495 545 410 480 410 370 V225 Z"
+          fill="#00e676" fill-opacity="0.08" stroke="url(#shield)" stroke-width="10" stroke-linejoin="round"/>
+    <rect x="535" y="345" width="130" height="105" rx="18" fill="#0b1a26" stroke="#00e676" stroke-width="8"/>
+    <path d="M562 345 V315 A38 38 0 0 1 638 315 V345" fill="none" stroke="#00e676" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="600" cy="392" r="12" fill="#00e676"/>
+    <rect x="594" y="392" width="12" height="28" rx="6" fill="#00e676"/>
+  </g>
+</svg>

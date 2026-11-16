@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const normalizePath = (value) => {
     const path = (value || '').split('?')[0].split('#')[0].replace(/\.html$/, '').replace(/\/+$/, '');
     if (path === '') return '/';
+    if (path === '/blog-post') return '/blog';
     return path.startsWith('/') ? path : '/' + path;
   };
   const currentPath = normalizePath(window.location.pathname);

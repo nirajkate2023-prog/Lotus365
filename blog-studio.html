@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Blog Studio | Lotus365</title>
+  <meta name="description" content="Private editorial workspace for publishing posts to the Lotus365 blog.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/blog.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3">
+</head>
+<body>
+
+  <header class="studio-hero">
+    <div class="container">
+      <h1>Blog Studio</h1>
+      <p>Write, preview and publish posts to the Lotus365 blog. Changes are committed to <code style="color: var(--accent-blue);">content/blog/posts.json</code> in your GitHub repository, or exported as a file you can upload to your host.</p>
+      <div class="blog-hero-stats">
+        <a class="blog-pill" href="/blog">← View live blog</a>
+        <span class="blog-pill">🔒 Private workspace</span>
+        <span class="blog-pill">⌨️ <strong>Ctrl/⌘ + S</strong> to publish</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="studio-shell">
+    <div class="container">
+
+      <!-- 1. CONNECTION -->
+      <section class="studio-panel">
+        <h2>1. Publishing connection</h2>
+
+        <div class="studio-setup-grid">
+          <div class="studio-field">
+            <label class="studio-label" for="cfg-owner">GitHub owner</label>
+            <input class="studio-input" id="cfg-owner" type="text" spellcheck="false" autocomplete="off" value="nirajkate2023-prog">
+          </div>
+          <div class="studio-field">
+            <label class="studio-label" for="cfg-repo">Repository</label>
+            <input class="studio-input" id="cfg-repo" type="text" spellcheck="false" autocomplete="off" value="Lotus365">
+          </div>
+          <div class="studio-field">
+            <label class="studio-label" for="cfg-branch">Branch</label>
+            <input class="studio-input" id="cfg-branch" type="text" spellcheck="false" autocomplete="off" value="main">
+          </div>
+          <div class="studio-field">
+            <label class="studio-label" for="cfg-path">File path</label>
+            <input class="studio-input" id="cfg-path" type="text" spellcheck="false" autocomplete="off" value="content/blog/posts.json">
+          </div>
+          <div class="studio-field full">
+            <label class="studio-label" for="cfg-token">Fine-grained personal access token</label>
+            <input class="studio-input" id="cfg-token" type="password" spellcheck="false" autocomplete="off" placeholder="github_pat_...">
+            <span class="studio-hint">Needs <code>Contents: Read and write</code> on this repository only. The token is never sent anywhere except api.github.com.</span>
+          </div>
+        </div>
+
+        <div class="studio-checks">
+          <label class="studio-check"><input type="checkbox" id="cfg-remember"> Remember token in this browser</label>
+        </div>
+
+        <div class="studio-actions">
+          <button type="button" class="studio-btn primary" id="btn-connect">Connect &amp; load posts</button>
+          <button type="button" class="studio-btn" id="btn-forget">Forget token</button>
+          <span class="conn-state" id="conn-state">Not connected</span>
+        </div>
+
+        <ol class="studio-steps">
+          <li>Open GitHub → <strong>Settings → Developer settings → Personal access tokens → Fine-grained tokens</strong>.</li>
+          <li><strong>Repository access:</strong> Only select repositories → <code>Lotus365</code>.</li>
+          <li><strong>Permissions → Repository permissions → Contents:</strong> Read and write. Nothing else is required.</li>
+          <li>Generate the token, copy it once, and paste it above.</li>
+        </ol>
+
+        <div class="studio-warning">
+          <strong>Security:</strong> this page is public HTML. Publishing only works with your token, so keep the token private and never commit it to the repo. Leave "Remember token" unticked on shared computers. Tokens expire — regenerate when publishing starts failing with 401.
+        </div>
+      </section>
+
+      <!-- 2. POSTS -->
+      <section class="studio-panel">
+        <div class="studio-editor-head">
+          <h2>2. Posts <span class="studio-item-meta" id="studio-list-count"></span></h2>
+          <div class="studio-item-actions">
+            <button type="button" class="studio-btn" id="btn-new">+ New post</button>
+            <button type="button" class="studio-btn" id="btn-download">Download posts.json</button>
+            <label class="studio-btn" for="import-file" style="margin:0;">Import posts.json</label>
+            <input type="file" id="import-file" accept="application/json,.json" style="display:none;">
+          </div>
+        </div>
+
+        <div class="studio-list" id="studio-list">
+          <p class="studio-empty">Loading posts...</p>
+        </div>
+
+        <div class="studio-status" id="studio-status"></div>
+      </section>
+
+      <!-- 3. EDITOR + PREVIEW -->
+      <div class="studio-columns">
+        <section class="studio-panel">
+          <div class="studio-editor-head">
+            <h2 id="editor-mode">New post</h2>
+            <div class="studio-stats">
+              <span id="stat-words">0 words</span>
+              <span id="stat-read">1 min read</span>
+            </div>
+          </div>
+
+          <div class="studio-setup-grid">
+            <div class="studio-field full">
+              <label class="studio-label" for="f-title">Title</label>
+              <input class="studio-input" id="f-title" type="text" placeholder="Aviator Crash Games: A Practical Guide">
+            </div>
+
+            <div class="studio-field full">
+              <label class="studio-label" for="f-slug">URL slug</label>
+              <input class="studio-input" id="f-slug" type="text" spellcheck="false" placeholder="aviator-crash-games-guide">
+              <span class="studio-hint">Article URL: <code>/blog-post?slug=</code> + slug. Generated from the title automatically.</span>
+            </div>
+
+            <div class="studio-field">
+              <label class="studio-label" for="f-category">Category</label>
+              <input class="studio-input" id="f-category" type="text" list="category-options" placeholder="Aviator &amp; Crash">
+              <datalist id="category-options"></datalist>
+            </div>
+
+            <div class="studio-field">
+              <label class="studio-label" for="f-author">Author</label>
+              <input class="studio-input" id="f-author" type="text" placeholder="Lotus365 Editorial">
+            </div>
+
+            <div class="studio-field">
+              <label class="studio-label" for="f-date">Publish date</label>
+              <input class="studio-input" id="f-date" type="date">
+            </div>
+
+            <div class="studio-field">
+              <label class="studio-label" for="f-tags">Tags (comma separated)</label>
+              <input class="studio-input" id="f-tags" type="text" placeholder="Aviator, Bankroll, Strategy">
+            </div>
+
+            <div class="studio-field full">
+              <label class="studio-label" for="f-cover">Cover image path or URL</label>
+              <input class="studio-input" id="f-cover" type="text" spellcheck="false" placeholder="images/blog/aviator-cover.svg">
+              <span class="studio-hint">Relative path from the site root, or an absolute https URL. Leave blank for a gradient placeholder.</span>
+            </div>
+
+            <div class="studio-field full">
+              <label class="studio-label" for="f-excerpt">Excerpt / summary</label>
+              <textarea class="studio-textarea" id="f-excerpt" rows="3" placeholder="One or two sentences shown on cards, search results and social previews."></textarea>
+            </div>
+
+            <div class="studio-field full">
+              <label class="studio-label" for="f-body">Article body (Markdown)</label>
+              <textarea class="studio-textarea studio-body-textarea" id="f-body" placeholder="## Section heading&#10;&#10;Paragraph text with **bold**, *italic* and [links](/games).&#10;&#10;- Bullet item&#10;- Another item"></textarea>
+              <span class="studio-hint">
+                Supported: <code>#</code>/<code>##</code> headings, <code>**bold**</code>, <code>*italic*</code>, <code>`code`</code>,
+                <code>[link](/path)</code>, <code>![alt](image)</code>, <code>- lists</code>, <code>1. lists</code>,
+                <code>&gt; quotes</code>, <code>```</code> code blocks. Raw HTML is escaped and will not render.
+              </span>
+            </div>
+          </div>
+
+          <div class="studio-checks">
+            <label class="studio-check"><input type="checkbox" id="f-published" checked> Published (visible on the blog)</label>
+            <label class="studio-check"><input type="checkbox" id="f-featured"> Feature on the blog index</label>
+          </div>
+
+          <div class="studio-actions">
+            <button type="button" class="studio-btn primary" id="btn-publish">Publish post</button>
+            <button type="button" class="studio-btn danger" id="btn-delete" hidden>Delete post</button>
+          </div>
+
+          <div class="draft-note" id="draft-note" hidden>
+            <span>Unsaved draft is kept in this browser.</span>
+            <button type="button" class="mini-btn" id="btn-discard-draft">Discard draft</button>
+          </div>
+        </section>
+
+        <aside class="studio-panel studio-preview">
+          <div class="studio-preview-label">Live preview</div>
+          <h2 class="preview-title" id="preview-title">Untitled post</h2>
+          <div class="preview-meta" id="preview-meta"></div>
+          <div class="preview-cover" id="preview-cover" hidden></div>
+          <div class="preview-body" id="preview-body">
+            <p class="studio-empty">Start typing to see the rendered article.</p>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/blog-core.js"></script>
+  <script src="js/blog-studio.js"></script>
+</body>
+</html>

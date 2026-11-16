@@ -2,6 +2,8 @@
 User-agent: *
 Allow: /
 Disallow: /content/
+Disallow: /blog-studio
+Disallow: /blog-studio.html
 
 # Crawl-delay for polite rate limiting
 Crawl-delay: 1

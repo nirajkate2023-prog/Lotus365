@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="Playing cards illustration">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d0818"/>
+      <stop offset="1" stop-color="#241338"/>
+    </linearGradient>
+    <radialGradient id="glow4" cx="0.5" cy="0.55" r="0.65">
+      <stop offset="0" stop-color="#7c4dff" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#7c4dff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg4)"/>
+  <rect width="1200" height="675" fill="url(#glow4)"/>
+  <g transform="translate(600 345) scale(1.42)">
+    <g transform="rotate(-20) translate(-238 -150)">
+      <rect width="205" height="295" rx="22" fill="#151c28" stroke="#00b0ff" stroke-width="6"/>
+      <circle cx="102" cy="147" r="32" fill="none" stroke="#00b0ff" stroke-width="6"/>
+      <circle cx="102" cy="118" r="14" fill="#00b0ff"/>
+    </g>
+    <g transform="rotate(20) translate(33 -150)">
+      <rect width="205" height="295" rx="22" fill="#151c28" stroke="#ff3d00" stroke-width="6"/>
+      <path d="M102 205 C60 168 55 132 84 113 C99 104 113 113 102 130 C91 113 105 104 120 113 C149 132 144 168 102 205 Z" fill="#ff3d00"/>
+    </g>
+    <g>
+      <rect x="-103" y="-158" width="205" height="295" rx="22" fill="#1b2233" stroke="#00e676" stroke-width="6"/>
+      <path d="M0 -62 L27 -8 L0 46 L-27 -8 Z" fill="#00e676"/>
+      <path d="M0 -16 L10 8 L0 27 L-10 8 Z" fill="#0d111a"/>
+    </g>
+  </g>
+</svg>
